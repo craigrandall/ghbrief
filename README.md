@@ -42,6 +42,8 @@ Records with `fetch_errors` always show them verbatim under a **Notes** line —
 
 These two axes are intentionally independent: you can make the tone more casual without touching a single threshold, or tighten what counts as "active" without touching a word of prose.
 
+**New to editing config/templates, or not a programmer?** See [`docs/CUSTOMIZING.md`](docs/CUSTOMIZING.md) — a worked-example guide covering both, plus an explicit list of changes that need a developer or an LLM instead.
+
 ### Required template files
 
 Every `--templates-dir` must contain these files (a fixed, explicit list — `ghbrief` fails with a clear "missing file" error naming exactly which one, rather than silently producing a thinner digest):
