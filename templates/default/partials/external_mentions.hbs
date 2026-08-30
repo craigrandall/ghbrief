@@ -1,0 +1,9 @@
+{{#unless skipped}}
+{{#if is_error}}
+- **Hacker News:** discovery failed for this run (see Notes below) — absence of mentions here means "unknown," not "zero."
+{{else}}
+{{#if mention_count includeZero=true}}
+- **Hacker News:** {{{mention_count}}} mention(s){{#if top_mention_title}}, e.g. "{{{top_mention_title}}}"{{#if top_mention_score}} (score {{{top_mention_score}}}){{/if}}{{/if}}
+{{/if}}
+{{/if}}
+{{/unless}}

@@ -1,0 +1,21 @@
+{{#if description}}> {{{description}}}
+{{/if}}
+- **Status:** {{{activity_label}}}; {{{popularity_label}}}; {{{release_cadence_label}}}.
+{{#if stargazers_count includeZero=true}}- **Stars:** {{{stargazers_count}}}{{#if forks_count includeZero=true}} · **Forks:** {{{forks_count}}}{{/if}}
+{{/if}}
+{{#if open_issues_count includeZero=true}}- **Issues:** {{{open_issues_count}}} open{{#if closed_issues_count includeZero=true}}, {{{closed_issues_count}}} closed{{/if}}
+{{/if}}
+{{#if top_languages}}- **Languages:** {{#each top_languages}}{{{this}}}{{#unless @last}}, {{/unless}}{{/each}}
+{{/if}}
+{{#if pushed_at}}- **Last pushed:** {{{pushed_at}}}
+{{/if}}
+{{#if contributors_count includeZero=true}}- **Contributors:** {{{contributors_count}}} ({{{contributors_semantics}}})
+{{/if}}
+{{#if latest_release}}- **Latest release:** {{{latest_release.tag_name}}}{{#if latest_release.published_at}} ({{{latest_release.published_at}}}){{/if}}
+{{/if}}
+{{#if homepage}}- **Homepage:** {{{homepage}}}
+{{/if}}
+{{#if license_name}}- **License:** {{{license_name}}}
+{{/if}}
+{{#if topics}}- **Topics:** {{#each topics}}{{{this}}}{{#unless @last}}, {{/unless}}{{/each}}
+{{/if}}

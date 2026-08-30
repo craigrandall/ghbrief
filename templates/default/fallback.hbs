@@ -1,0 +1,12 @@
+## {{{link_kind}}}
+{{{input_url}}}
+
+_This link_kind ("{{{link_kind}}}") is not one this copy of ghbrief recognizes — it may be newer than the schema.rs mirror ghbrief was written against. Showing raw fields only._
+
+{{#if repo_data}}
+{{> partials/repo_stats repo_data}}
+{{/if}}
+{{#if gist_data}}{{#if gist_data.description}}> {{{gist_data.description}}}
+{{/if}}{{/if}}
+{{> partials/external_mentions external}}
+{{> partials/errors}}

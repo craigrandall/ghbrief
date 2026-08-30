@@ -1,0 +1,24 @@
+## Gist: {{{owner}}}
+{{{input_url}}}
+
+{{#if gist_data}}
+{{#if gist_data.description}}> {{{gist_data.description}}}
+{{/if}}
+- **Files:** {{{gist_data.file_count}}}{{#if gist_data.files}} ({{#each gist_data.files}}{{{this}}}{{#unless @last}}, {{/unless}}{{/each}}){{/if}}
+{{#if gist_data.owner_login}}- **Owner:** {{{gist_data.owner_login}}}
+{{/if}}
+{{#if gist_data.comments includeZero=true}}- **Comments:** {{{gist_data.comments}}}
+{{/if}}
+{{#if gist_data.revision_count includeZero=true}}- **Revisions:** {{{gist_data.revision_count}}}
+{{/if}}
+{{#if gist_data.created_at}}- **Created:** {{{gist_data.created_at}}}
+{{/if}}
+{{#if gist_data.updated_at}}- **Last updated:** {{{gist_data.updated_at}}}
+{{/if}}
+{{#if gist_data.note}}- **Note:** {{{gist_data.note}}}
+{{/if}}
+{{else}}
+_No gist data was collected for this link._
+{{/if}}
+{{> partials/external_mentions external}}
+{{> partials/errors}}

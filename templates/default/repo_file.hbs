@@ -1,0 +1,12 @@
+## {{{owner}}}/{{{repo}}} — {{{file_path}}}
+{{{input_url}}}
+
+_Points at a specific file; the stats below describe the whole repository, not just this file._
+
+{{#if repo_data}}
+{{> partials/repo_stats repo_data}}
+{{else}}
+_No repository data was collected for this link._
+{{/if}}
+{{> partials/external_mentions external}}
+{{> partials/errors}}

@@ -1,0 +1,51 @@
+# ghbrief default configuration.
+#
+# This file controls WHAT COUNTS AS a given label (thresholds) and WHAT
+# WORD is used for it (labels). It does NOT control sentence structure or
+# overall tone — that's the templates' job (see templates/default/*.hbs).
+# Copy this file, edit the numbers/words, and pass --config your-copy.toml
+# to use it instead of this embedded default.
+#
+# Every "_unknown" label exists because a field being absent is different
+# from a field being a known low/zero value, and ghbrief follows the same
+# rule ghlinks itself does: never silently treat "we don't know" as "the
+# answer is no."
+
+[tone]
+profile_name = "neutral-analytical"
+
+[activity]
+# Bucketed from repo_data.pushed_at, as days-since-last-push at the time
+# ghbrief runs (not at the time ghlinks collected the data).
+active_within_days = 90
+maintained_within_days = 365
+label_active = "actively maintained"
+label_maintained = "maintained, though pushes have slowed recently"
+label_dormant = "not recently updated"
+label_unknown = "activity could not be determined (no push date available)"
+
+[popularity]
+# Bucketed from repo_data.stargazers_count. These thresholds are
+# deliberately rough and arbitrary — tune them to whatever "notable"
+# means for the kinds of repos you actually track.
+notable_at_stars = 1000
+established_at_stars = 100
+emerging_at_stars = 10
+label_notable = "widely used"
+label_established = "moderately popular"
+label_emerging = "gaining some traction"
+label_new_or_niche = "small or niche"
+label_unknown = "popularity could not be determined"
+
+[release_cadence]
+# Bucketed from repo_data.releases_last_12_months. Note this is
+# independent of activity/pushed_at — a repo can be actively developed
+# with zero formal releases, and this label is phrased to avoid implying
+# otherwise (see templates, which keep these two facts separate rather
+# than merging them into one "how alive is this" verdict).
+frequent_at_count = 6
+occasional_at_count = 1
+label_frequent = "releases regularly"
+label_occasional = "releases occasionally"
+label_none = "has not published a release in the past 12 months"
+label_unknown = "release cadence could not be determined"

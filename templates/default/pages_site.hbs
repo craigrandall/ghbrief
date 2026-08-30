@@ -1,0 +1,19 @@
+## GitHub Pages site: {{{owner}}}
+{{{input_url}}}
+
+{{#if pages_resolved_repo}}
+Backed by repository `{{{pages_resolved_repo}}}`.
+
+{{#if repo_data}}
+{{> partials/repo_stats repo_data}}
+{{else}}
+_The backing repository was identified, but its data was not collected._
+{{/if}}
+{{else}}
+_The backing repository could not be automatically identified._
+{{#if pages_candidates_checked}}
+- **Candidates checked:** {{#each pages_candidates_checked}}{{{this}}}{{#unless @last}}, {{/unless}}{{/each}}
+{{/if}}
+{{/if}}
+{{> partials/external_mentions external}}
+{{> partials/errors}}
